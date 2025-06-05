@@ -3,8 +3,37 @@
 <head>
     <meta charset="UTF-8" />
     <title>Quick-Calm Puppy Pack</title>
+    <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
-    <h1>Hello World!</h1>
+    <h2>Complete Your Purchase</h2>
+    <div class="checkout-container">
+        <label>
+          Email
+          <input id="email" type="email" placeholder="you@example.com" required />
+        </label>
+
+        <!-- STRIPE PAYMENT ELEMENT -->
+        <div>
+          <label>
+            Card / Apple Pay (Stripe)
+            <div id="stripe-element"></div>
+          </label>
+          <button id="stripe-pay-btn" disabled>Pay $17</button>
+        </div>
+
+        <hr />
+
+        <!-- PAYPAL BUTTONS -->
+        <div>
+          <label>Or Pay with PayPal</label>
+          <div id="paypal-button-container"></div>
+        </div>
+    </div>
+    <!-- Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- PayPal SDK: replace "YOUR_PAYPAL_CLIENT_ID" with your actual client ID -->
+    <script src="https://www.paypal.com/sdk/js?client-id=YOUR_PAYPAL_CLIENT_ID&currency=USD"></script>
 </body>
+<script src="/checkout.js"></script> 
 </html>
